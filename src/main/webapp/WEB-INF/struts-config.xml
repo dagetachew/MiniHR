@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<!-- "(display-name?,description?,data-sources?,form-beans?,global-exceptions?,global- 
+		forwards?,action-mappings?,controller?,message-resources*,plug-in*)". -->
+
+	<form-beans>
+		<form-bean name="searchForm"
+			type="com.jamesholmes.struts.SearchForm" />
+	</form-beans>
+	<global-forwards>
+		<forward name="search" path="/search.jsp" />
+	</global-forwards>
+	<!-- Action Mappings Configuration -->
+	<action-mappings>
+		<action path="/search"
+			type="com.jamesholmes.struts.SearchAction" name="searchForm"
+			scope="request" validate="true" input="/search.jsp">
+			<forward name="results" path="/results.jsp" />
+		</action>
+	</action-mappings>
+
+	<!-- Message Resources Configuration -->
+	<message-resources
+		parameter="com.jamesholmes.struts.ApplicationResources" />
+	<!-- Validator Configuration -->
+<!-- 	<plug-in
+		className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,
+					/WEB-INF/validation.xml" />
+	</plug-in>
+ --></struts-config>
+
+	

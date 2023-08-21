@@ -1,0 +1,4 @@
+com\jamesholmes\struts\Employee.class
+com\jamesholmes\struts\EmployeeSearchService.class
+com\jamesholmes\struts\SearchAction.class
+com\jamesholmes\struts\SearchForm.class
